@@ -99,13 +99,58 @@ public class Problemsolve {
         System.out.println("Minimum number : " + min);
         System.out.println("Maximum number : " + max);
     }
+    // Moving negative numbers to the end
+
+    public static void moveneg(int[] arr) {
+        int[] temp = new int[arr.length];
+        int j = 0;
+        int k = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                temp[j] = arr[i];
+                j++;
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                temp[j] = arr[i];
+                j++;
+            }
+        }
+        System.out.println(Arrays.toString(temp));
+    }
+
+    // Duplicates in an Array
+    public static void duparr(int[] arr) {
+
+        int[] temp = new int[arr.length];
+        Arrays.sort(arr);
+        int a, b;
+        a = 0;
+        b = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] == arr[i + 1]) {
+                temp[a] = arr[i];
+                i++;
+                a++;
+            }
+        }
+        int[] darr = new int[a];
+        for (int i = 0; i < a; i++) {
+            darr[i] = temp[i];
+        }
+        System.out.println("Duplicate numbers in the array : ");
+        System.out.println(Arrays.toString(darr));
+    }
 
     public static void main(String[] args) {
 
         reversestr("savitha");
         stringpalindrome("ada");
-        int[] arr = { 8, 9, 6, 8, 5, 1, 8, 5, 0, 1 };
+        int[] arr = { 8, 9, -6, 8, 5, -1, 8, 5, 0, 1 };
         repnum(arr);
         minmax(arr);
+        moveneg(arr);
+        duparr(arr);
     }
 }
