@@ -104,7 +104,7 @@ public class Problemsolve {
     public static void moveneg(int[] arr) {
         int[] temp = new int[arr.length];
         int j = 0;
-        int k = 0;
+
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
                 temp[j] = arr[i];
@@ -117,17 +117,19 @@ public class Problemsolve {
                 j++;
             }
         }
+        System.out.println("After moving negative numvbers to the end :");
         System.out.println(Arrays.toString(temp));
     }
 
     // Duplicates in an Array
+
     public static void duparr(int[] arr) {
 
         int[] temp = new int[arr.length];
         Arrays.sort(arr);
-        int a, b;
+        int a;
         a = 0;
-        b = 0;
+        // b = 0;
         for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i] == arr[i + 1]) {
                 temp[a] = arr[i];
